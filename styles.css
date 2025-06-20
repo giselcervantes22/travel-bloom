@@ -225,9 +225,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.6)), url('/travel-bloom/background.jpg');
-
-
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.6)), url('https://giselcervantes22.github.io/travel-bloom/background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
