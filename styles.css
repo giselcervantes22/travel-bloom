@@ -224,7 +224,7 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.6)), url('https://giselcervantes22.github.io/travel-bloom/background.jpg');
             background-size: cover;
             background-position: center;
@@ -236,6 +236,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            padding: 2rem 1rem;
         }
 
         .hero::before {
@@ -255,6 +256,7 @@
             padding: 2rem;
             z-index: 2;
             position: relative;
+            width: 100%;
         }
 
         .hero h1 {
@@ -284,6 +286,7 @@
             justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 1s ease-out 0.4s both;
+            margin-bottom: 2rem;
         }
 
         .btn {
@@ -328,14 +331,12 @@
 
         /* Social Media Links */
         .social-links {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
             display: flex;
-            flex-direction: column;
             gap: 1rem;
-            z-index: 100;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            z-index: 2;
+            position: relative;
         }
 
         .social-links a {
@@ -406,6 +407,16 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .search-bar {
+                width: 250px;
+            }
+            
+            .search-bar:focus {
+                width: 280px;
+            }
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 1rem;
@@ -423,45 +434,116 @@
                 display: flex;
             }
 
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo i {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                background-attachment: scroll;
+                padding: 1rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+                line-height: 1.2;
             }
 
             .hero p {
                 font-size: 1.1rem;
+                margin-bottom: 2rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
 
             .social-links {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                margin-top: 2rem;
-                transform: none;
+                gap: 0.8rem;
+            }
+
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .floating-element {
+                display: none;
             }
         }
 
         @media (max-width: 480px) {
+            .navbar {
+                padding: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo i {
+                font-size: 1.3rem;
+                margin-right: 0.3rem;
+            }
+
             .hero h1 {
                 font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
                 font-size: 1rem;
-                padding: 0 1rem;
+                padding: 0 0.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .btn {
                 padding: 0.8rem 2rem;
                 font-size: 1rem;
+                max-width: 250px;
             }
 
             .mobile-search-bar {
-                width: 250px;
+                width: 220px;
+            }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+                max-width: 220px;
+            }
+
+            .mobile-search-bar {
+                width: 200px;
             }
         }
     </style>
