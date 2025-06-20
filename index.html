@@ -5,36 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBloom - Discover Your Next Adventure</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">  
+   
 </head>
 <body>
-  <!-- Navigation Bar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="#" class="logo">
-      <i class="fas fa-globe-americas"></i>
-      TravelBloom
-    </a>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-globe-americas"></i>
+                TravelBloom
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            
+            <!-- Desktop Search -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-bar" 
+                    placeholder="Search destinations, experiences..."
+                    id="searchInput"
+                >
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-
-    <div class="search-container">
-      <input 
-        type="text" 
-        class="search-bar" 
-        placeholder="Search destinations, experiences..."
-        id="searchInput"
-      >
-      <i class="fas fa-search search-icon"></i>
-      <div class="search-results" id="searchResults"></div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        
+        <!-- Mobile Search -->
+        <div class="mobile-search-container">
+            <input 
+                type="text" 
+                class="mobile-search-bar" 
+                placeholder="Search destinations..."
+                id="mobileSearchInput"
+            >
+            <i class="fas fa-search mobile-search-icon"></i>
+        </div>
     </div>
-  </div>
-</nav>
-
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -48,7 +75,6 @@
         <div class="floating-element">
             <i class="fas fa-compass" style="font-size: 3.5rem; color: rgba(255,255,255,0.1);"></i>
         </div>
-
         <div class="hero-content">
             <h1>Discover Your Next Adventure</h1>
             <p>Explore breathtaking destinations, immerse yourself in diverse cultures, and create unforgettable memories. Let TravelBloom guide you to extraordinary experiences around the world.</p>
@@ -64,7 +90,6 @@
                 </a>
             </div>
         </div>
-
         <!-- Social Media Links -->
         <div class="social-links">
             <a href="#" title="Facebook">
@@ -81,7 +106,6 @@
             </a>
         </div>
     </section>
-    <script src="script.js"></script>
 
   
 </body>
