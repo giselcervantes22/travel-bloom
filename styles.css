@@ -1,4 +1,4 @@
- <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -125,7 +125,8 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            padding: 0.5rem;
+            padding: 0.8rem;
+            margin-right: 0.5rem;
             z-index: 1001;
         }
 
@@ -419,7 +420,7 @@
 
         @media (max-width: 768px) {
             .navbar {
-                padding: 1rem;
+                padding: 1rem 1.5rem;
             }
 
             .nav-links {
@@ -432,6 +433,7 @@
 
             .hamburger {
                 display: flex;
+                margin-right: 0;
             }
 
             .logo {
@@ -487,7 +489,7 @@
 
         @media (max-width: 480px) {
             .navbar {
-                padding: 0.8rem;
+                padding: 0.8rem 1rem;
             }
 
             .logo {
