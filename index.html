@@ -40,78 +40,100 @@
     </style>
 </head>
 <body class="bg-gray-50">
-  <!-- Navigation Bar -->
-<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary hover:text-secondary transition-colors">
-                <i class="fas fa-globe-americas"></i>
-                <span>TravelBloom</span>
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a></li>
-                <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors font-medium">About Us</a></li>
-                <li><a href="contact.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact Us</a></li>
-            </ul>
-            
-            <!-- Desktop Search -->
-            <div class="hidden md:flex relative">
-                <input 
-                    type="text" 
-                    class="w-64 pl-10 pr-12 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Search destinations..."
-                    id="searchInput"
-                >
-                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                <button 
-                    id="clearBtn"
-                    class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden"
-                    title="Clear search"
-                >
-                    <i class="fas fa-times"></i>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>TravelBloom</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a></li>
+                    <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors font-medium">About Us</a></li>
+                    <li><a href="contact.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact Us</a></li>
+                </ul>
+                
+                <!-- Desktop Search -->
+                <div class="hidden md:flex relative">
+                    <input 
+                        type="text" 
+                        class="w-64 pl-10 pr-12 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Search destinations..."
+                        id="searchInput"
+                    >
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <button 
+                        id="clearBtn"
+                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden"
+                        title="Clear search"
+                    >
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="hamburger">
+                    <div class="w-6 h-6 flex flex-col justify-around">
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                    </div>
                 </button>
             </div>
-            
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden p-2" id="hamburger">
-                <div class="w-6 h-6 flex flex-col justify-around">
-                    <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
-                </div>
-            </button>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Search Results Overlay -->
-<div id="searchOverlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
-<div id="searchDropdown" class="fixed top-16 left-0 right-0 bg-white shadow-2xl z-50 max-h-96 overflow-y-auto hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div id="searchResults">
-            <div class="mb-4">
-                <p id="resultsCount" class="text-gray-600 text-sm"></p>
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
+        <div class="pt-20 px-6">
+            <ul class="space-y-6">
+                <li><a href="index.html" class="block text-xl text-gray-700 hover:text-primary transition-colors">Home</a></li>
+                <li><a href="about.html" class="block text-xl text-gray-700 hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="contact.html" class="block text-xl text-gray-700 hover:text-primary transition-colors">Contact Us</a></li>
+            </ul>
+            
+            <!-- Mobile Search -->
+            <div class="mt-8 relative">
+                <input 
+                    type="text" 
+                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Search destinations..."
+                    id="mobileSearchInput"
+                >
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
             </div>
-            <div id="resultsContainer" class="space-y-4">
-                <!-- Results will be populated here -->
-            </div>
-        </div>
-        
-        <div id="noResults" class="hidden text-center py-8">
-            <i class="fas fa-search text-4xl text-gray-300 mb-3"></i>
-            <h3 class="text-lg font-semibold text-gray-600 mb-2">No destinations found</h3>
-            <p class="text-gray-500">Try searching for 'beach', 'mountain', 'city', or other keywords</p>
         </div>
     </div>
-</div>
+
+    <!-- Search Results Overlay -->
+    <div id="searchOverlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    <div id="searchDropdown" class="fixed top-16 left-0 right-0 bg-white shadow-2xl z-50 max-h-96 overflow-y-auto hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div id="searchResults">
+                <div class="mb-4">
+                    <p id="resultsCount" class="text-gray-600 text-sm"></p>
+                </div>
+                <div id="resultsContainer" class="space-y-4">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+            
+            <div id="noResults" class="hidden text-center py-8">
+                <i class="fas fa-search text-4xl text-gray-300 mb-3"></i>
+                <h3 class="text-lg font-semibold text-gray-600 mb-2">No destinations found</h3>
+                <p class="text-gray-500">Try searching for 'beach', 'mountain', 'city', or other keywords</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center overflow-hidden" 
-         style="background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.7), rgba(240, 147, 251, 0.7)), url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;" 
-         id="home">
+             style="background-image: linear-gradient(rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.7), rgba(240, 147, 251, 0.7)), url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;" 
+             id="home">
         <!-- Floating Elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute top-20 left-10 animate-float">
@@ -397,7 +419,7 @@
                 <h2 class="text-4xl font-bold mb-4">Stay Updated</h2>
                 <p class="text-xl mb-8 text-white/90">Get the latest travel deals, destination guides, and insider tips delivered to your inbox</p>
                 
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" id="newsletterForm">
                     <input 
                         type="email" 
                         placeholder="Enter your email address" 
@@ -482,123 +504,7 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            const spans = hamburger.querySelectorAll('span');
-            
-            if (mobileMenu.classList.contains('translate-x-full')) {
-                // Open menu
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-                
-                // Animate hamburger to X
-                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            } else {
-                // Close menu
-                mobileMenu.classList.add('translate-x-full');
-                mobileMenu.classList.remove('translate-x-0');
-                
-                // Reset hamburger
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-
-        // Close mobile menu when clicking on links
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-                mobileMenu.classList.remove('translate-x-0');
-                
-                // Reset hamburger
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white');
-                navbar.classList.remove('bg-white/95');
-            } else {
-                navbar.classList.remove('bg-white');
-                navbar.classList.add('bg-white/95');
-            }
-        });
-
-        // Newsletter form
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            
-            // Simple email validation
-            if (email && email.includes('@')) {
-                alert('¡Gracias por suscribirte! Te mantendremos actualizado con nuestras últimas ofertas de viaje.');
-                e.target.reset();
-            } else {
-                alert('Por favor, ingresa un email válido.');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animations
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Search functionality
-        const searchInputs = document.querySelectorAll('input[type="text"]');
-        searchInputs.forEach(input => {
-            input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const query = e.target.value.trim();
-                    if (query) {
-                        alert(`Buscando: "${query}"... Esta funcionalidad estará disponible próximamente.`);
-                    }
-                }
-            });
-        });
-
-         // Database of destinations
+        // Database of destinations
         const destinations = [
             {
                 id: 1,
@@ -698,173 +604,214 @@
             });
         }
 
-        // Render search results
-        function renderResults(results) {
+        // Render compact results for navbar
+        function renderNavbarResults(results) {
             const resultsContainer = document.getElementById('resultsContainer');
-            const searchResults = document.getElementById('searchResults');
-            const noResults = document.getElementById('noResults');
-            const defaultState = document.getElementById('defaultState');
             const resultsCount = document.getElementById('resultsCount');
-
-            // Hide default state
-            defaultState.classList.add('hidden');
+            const noResults = document.getElementById('noResults');
 
             if (results.length === 0) {
-                searchResults.classList.add('hidden');
                 noResults.classList.remove('hidden');
+                resultsCount.textContent = '';
+                resultsContainer.innerHTML = '';
                 return;
             }
 
-            // Show results
             noResults.classList.add('hidden');
-            searchResults.classList.remove('hidden');
             resultsCount.textContent = `Found ${results.length} destination${results.length > 1 ? 's' : ''}`;
 
-            resultsContainer.innerHTML = results.map(destination => `
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="md:flex">
-                        <div class="md:w-1/3">
-                            <img 
-                                src="${destination.image}" 
-                                alt="${destination.name}"
-                                class="w-full h-64 md:h-full object-cover"
-                                onerror="this.src='https://via.placeholder.com/800x600/667eea/ffffff?text=${encodeURIComponent(destination.name)}'"
-                            >
-                        </div>
-                        <div class="md:w-2/3 p-6">
-                            <div class="flex justify-between items-start mb-3">
-                                <div>
-                                    <h3 class="text-2xl font-bold text-gray-800 mb-1">${destination.name}</h3>
-                                    <p class="text-gray-600 flex items-center">
-                                        <i class="fas fa-map-marker-alt mr-2"></i>
-                                        ${destination.location}
-                                    </p>
-                                </div>
-                                <div class="text-right">
-                                    <div class="flex items-center mb-1">
-                                        <span class="text-yellow-400 mr-1">★</span>
-                                        <span class="text-gray-700 font-semibold">${destination.rating}</span>
-                                    </div>
-                                    <p class="text-2xl font-bold text-primary">${destination.price}</p>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 mb-4 leading-relaxed">${destination.description}</p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                ${destination.category.map(cat => `
-                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm capitalize">${cat}</span>
-                                `).join('')}
-                            </div>
-                            
-                            <div class="flex gap-3">
-                                <button class="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary transition-colors">
-                                    <i class="fas fa-calendar-check mr-2"></i>
-                                    Book Now
-                                </button>
-                                <button class="border border-primary text-primary px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
-                                    <i class="fas fa-info-circle mr-2"></i>
-                                    Learn More
-                                </button>
-                            </div>
-                        </div>
+            resultsContainer.innerHTML = results.slice(0, 4).map(destination => `
+                <div class="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
+                    <img 
+                        src="${destination.image}" 
+                        alt="${destination.name}"
+                        class="w-16 h-16 object-cover rounded-lg"
+                        onerror="this.src='https://via.placeholder.com/64x64/667eea/ffffff?text=${encodeURIComponent(destination.name.charAt(0))}'"
+                    >
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-gray-800">${destination.name}</h4>
+                        <p class="text-sm text-gray-600">${destination.location}</p>
+                        <p class="text-sm text-primary font-semibold">${destination.price}</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-yellow-400 mr-1">★</span>
+                        <span class="text-sm text-gray-600">${destination.rating}</span>
                     </div>
                 </div>
             `).join('');
-        }
 
-        // Clear search
-        function clearSearch() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('searchResults').classList.add('hidden');
-            document.getElementById('noResults').classList.add('hidden');
-            document.getElementById('defaultState').classList.remove('hidden');
-            document.getElementById('clearBtn').classList.add('hidden');
-        }
-
-        // Event listeners
-        document.getElementById('searchBtn').addEventListener('click', () => {
-            const query = document.getElementById('searchInput').value;
-            const results = searchDestinations(query);
-            renderResults(results);
-            
-            if (query.trim() !== '') {
-                document.getElementById('clearBtn').classList.remove('hidden');
+            if (results.length > 4) {
+                resultsContainer.innerHTML += `
+                    <div class="text-center py-3 border-t">
+                        <button class="text-primary hover:text-secondary font-semibold">
+                            View all ${results.length} results →
+                        </button>
+                    </div>
+                `;
             }
-        });
+        }
 
-        document.getElementById('clearBtn').addEventListener('click', clearSearch);
+        // Show/hide search dropdown
+        function showSearchResults() {
+            document.getElementById('searchOverlay').classList.remove('hidden');
+            document.getElementById('searchDropdown').classList.remove('hidden');
+        }
 
-        // Search on Enter key
-        document.getElementById('searchInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const query = e.target.value;
-                const results = searchDestinations(query);
-                renderResults(results);
+        function hideSearchResults() {
+            document.getElementById('searchOverlay').classList.add('hidden');
+            document.getElementById('searchDropdown').classList.add('hidden');
+        }
+
+        // DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('clearBtn');
+            const searchOverlay = document.getElementById('searchOverlay');
+            const searchDropdown = document.getElementById('searchDropdown');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // Mobile menu toggle
+            hamburger.addEventListener('click', () => {
+                const spans = hamburger.querySelectorAll('span');
                 
-                if (query.trim() !== '') {
-                    document.getElementById('clearBtn').classList.remove('hidden');
+                if (mobileMenu.classList.contains('translate-x-full')) {
+                    // Open menu
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    
+                    // Animate hamburger to X
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    // Close menu
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenu.classList.remove('translate-x-0');
+                    
+                    // Reset hamburger
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
                 }
-            }
-        });
+            });
 
-        // Real-time search as user types (optional)
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const query = e.target.value;
-            
-            if (query.trim() === '') {
-                clearSearch();
-                return;
-            }
-            
-            // Optional: Add a small delay to avoid too many searches
-            clearTimeout(window.searchTimeout);
-            window.searchTimeout = setTimeout(() => {
+            // Close mobile menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenu.classList.remove('translate-x-0');
+                    
+                    // Reset hamburger
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+
+            // Search as user types
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+                
+                if (query === '') {
+                    hideSearchResults();
+                    clearBtn.classList.add('hidden');
+                    return;
+                }
+
+                clearBtn.classList.remove('hidden');
+                
                 const results = searchDestinations(query);
-                renderResults(results);
-                document.getElementById('clearBtn').classList.remove('hidden');
-            }, 300);
+                renderNavbarResults(results);
+                showSearchResults();
+            });
+
+            // Clear search
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                hideSearchResults();
+                clearBtn.classList.add('hidden');
+                searchInput.focus();
+            });
+
+            // Hide results when clicking overlay
+            searchOverlay.addEventListener('click', hideSearchResults);
+
+            // Hide results when pressing Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    hideSearchResults();
+                }
+            });
+
+            // Prevent dropdown from closing when clicking inside
+            searchDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white');
+                    navbar.classList.remove('bg-white/95');
+                } else {
+                    navbar.classList.remove('bg-white');
+                    navbar.classList.add('bg-white/95');
+                }
+            });
+
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = e.target.querySelector('input[type="email"]').value;
+                    
+                    if (email && email.includes('@')) {
+                        alert('¡Gracias por suscribirte! Te mantendremos actualizado con nuestras últimas ofertas de viaje.');
+                        e.target.reset();
+                    } else {
+                        alert('Por favor, ingresa un email válido.');
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animations
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
         });
-
-         // Search as user types
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.trim();
-        
-        if (query === '') {
-            hideSearchResults();
-            clearBtn.classList.add('hidden');
-            return;
-        }
-
-        clearBtn.classList.remove('hidden');
-        
-        const results = searchDestinations(query);
-        renderNavbarResults(results);
-        showSearchResults();
-    });
-
-    // Clear search
-    clearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        hideSearchResults();
-        clearBtn.classList.add('hidden');
-        searchInput.focus();
-    });
-
-    // Hide results when clicking overlay
-    searchOverlay.addEventListener('click', hideSearchResults);
-
-    // Hide results when pressing Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            hideSearchResults();
-        }
-    });
-
-    // Prevent dropdown from closing when clicking inside
-    searchDropdown.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
     </script>
 </body>
 </html>
