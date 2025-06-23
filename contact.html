@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TravelBloom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'bounce-slow': 'bounce 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>TravelBloom</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a></li>
+                    <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors font-medium">About Us</a></li>
+                    <li><a href="contact.html" class="text-primary font-semibold border-b-2 border-primary">Contact Us</a></li>
+                </ul>
+                
+                <!-- Desktop Search -->
+                <div class="hidden md:flex relative">
+                    <input 
+                        type="text" 
+                        class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Search destinations..."
+                        id="searchInput"
+                    >
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="hamburger">
+                    <div class="w-6 h-6 flex flex-col justify-around">
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
+        <div class="pt-20 px-6">
+            <ul class="space-y-6">
+                <li><a href="index.html" class="block text-xl text-gray-700 hover:text-primary transition-colors">Home</a></li>
+                <li><a href="about.html" class="block text-xl text-gray-700 hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="contact.html" class="block text-xl text-primary font-semibold">Contact Us</a></li>
+            </ul>
+            
+            <!-- Mobile Search -->
+            <div class="mt-8 relative">
+                <input 
+                    type="text" 
+                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Search destinations..."
+                >
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative pt-24 pb-20 bg-gradient-to-br from-primary via-secondary to-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-white animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">Ready to start your next adventure? Get in touch with our travel experts</p>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 text-white/10 animate-bounce-slow">
+            <i class="fas fa-envelope text-4xl"></i>
+        </div>
+        <div class="absolute bottom-20 right-10 text-white/10 animate-bounce-slow" style="animation-delay: 1s;">
+            <i class="fas fa-phone text-5xl"></i>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="animate-slide-up">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+                    <p class="text-gray-600 mb-8">Have questions about our destinations or need help planning your trip? Fill out the form below and our travel experts will get back to you within 24 hours.</p>
+                    
+                    <form class="space-y-6" id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                    placeholder="Your first name"
+                                >
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                    placeholder="Your last name"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                placeholder="your.email@example.com"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                placeholder="+1 (555) 123-4567"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                            <select 
+                                id="subject" 
+                                name="subject" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                            >
+                                <option value="">Choose a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="booking">Booking Assistance</option>
+                                <option value="destinations">Destination Information</option>
+                                <option value="support">Customer Support</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="feedback">Feedback & Reviews</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="5" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                                placeholder="Tell us about your travel plans, questions, or how we can help you..."
+                            ></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="newsletter" 
+                                name="newsletter"
+                                class="mt-1 text-primary focus:ring-primary border-gray-300 rounded"
+                            >
+                            <label for="newsletter" class="ml-3 text-sm text-gray-600">
+                                I would like to receive travel tips, exclusive offers, and destination updates via email.
+                            </label>
+                        </div>
+                        
+                        <button 
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-lg font-semibold hover:from-secondary hover:to-primary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="animate-slide-up" style="animation-delay: 0.2s;">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8">We're here to help you plan the perfect adventure. Reach out to us through any of these channels:</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl">
+                            <div class="bg-blue-500 text-white p-3 rounded-full">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Phone Support</h3>
+                                <p class="text-gray-600 mb-1">Call us for immediate assistance</p>
+                                <p class="text-blue-600 font-semibold">+1 (555) 123-4567</p>
+                                <p class="text-sm text-gray-500">Monday - Friday: 9:00 AM - 8:00 PM PST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl">
+                            <div class="bg-green-500 text-white p-3 rounded-full">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Email Support</h3>
+                                <p class="text-gray-600 mb-1">Send us an email anytime</p>
+                                <p class="text-green-600 font-semibold">info@travelbloom.com</p>
+                                <p class="text-sm text-gray-500">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl">
+                            <div class="bg-purple-500 text-white p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Visit Our Office</h3>
+                                <p class="text-gray-600 mb-1">Stop by for in-person consultation</p>
+                                <p class="text-purple-600 font-semibold">123 Travel Street<br>Adventure City, AC 12345</p>
+                                <p class="text-sm text-gray-500">Monday - Friday: 10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-orange-50 to-red-100 rounded-xl">
+                            <div class="bg-orange-500 text-white p-3 rounded-full">
+                                <i class="fas fa-comments text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Live Chat</h3>
+                                <p class="text-gray-600 mb-1">Chat with our team in real-time</p>
+                                <button class="text-orange-600 font-semibold hover:text-orange-700 transition-colors">
+                                    Start Chat →
+                                </button>
+                                <p class="text-sm text-gray-500">Available 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Find Us</h2>
+                <p class="text-gray-600">Located in the heart of Adventure City, we're easy to reach</p>
+            </div>
+            
+            <!-- Mock Map -->
+            <div class="bg-gray-300 rounded-2xl h-96 flex items-center justify-center shadow-lg overflow-hidden relative">
+                <div class="text-center text-gray-600">
+                    <i class="fas fa-map-marked-alt text-6xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Interactive Map</h3>
+                    <p>123 Travel Street, Adventure City, AC 12345</p>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">
+                        Get Directions
+                    </button>
+                </div>
+                
+                <!-- Map Marker -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div class="bg-red-500 text-white p-3 rounded-full shadow-lg animate-bounce">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Directions -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-car text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">By Car</h3>
+                    <p class="text-gray-600 text-sm">Free parking available<br>Valet service on weekends</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-subway text-3xl text-green-500 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">Public Transit</h3>
+                    <p class="text-gray-600 text-sm">Metro Station: Adventure Plaza<br>3-minute walk from exit B</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <i class="fas fa-plane text-3xl text-purple-500 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">From Airport</h3>
+                    <p class="text-gray-600 text-sm">25 minutes by taxi<br>Airport shuttle available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600">Quick answers to common questions about our services</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-button">
+                        <span class="font-semibold text-gray-800">How far in advance should I book my trip?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden faq-content">
+                        We recommend booking at least 2-3 months in advance for international trips and 4-6 weeks for domestic travel. This ensures better availability and pricing for flights and accommodations.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-button">
+                        <span class="font-semibold text-gray-800">Do you offer travel insurance?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden faq-content">
+                        Yes, we offer comprehensive travel insurance options that cover trip cancellation, medical emergencies, lost luggage, and more. Our travel experts will help you choose the right coverage for your trip.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-button">
+                        <span class="font-semibold text-gray-800">Can you help with visa requirements?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden faq-content">
+                        Absolutely! Our team provides detailed visa information and assistance for all destinations. We'll guide you through the application process and ensure you have all necessary documentation.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-button">
+                        <span class="font-semibold text-gray-800">What if I need to cancel or modify my trip?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden faq-content">
+                        We understand that plans can change. Our flexible booking policies allow for modifications up to certain dates before departure. Cancellation terms vary by destination and package, but we always work to minimize any fees.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-button">
+                        <span class="font-semibold text-gray-800">Do you offer group discounts?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 hidden faq-content">
+                        Yes! We offer special group rates for parties of 8 or more travelers. Contact our group travel specialists for customized packages and exclusive pricing for your family reunion, corporate retreat, or friends' getaway.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-white">
+                <h2 class="text-4xl font-bold mb-4">Stay Connected</h2>
+                <p class="text-xl mb-8 text-white/90">Subscribe to our newsletter for travel tips, exclusive deals, and destination inspiration</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" id="newsletterForm">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email address" 
+                        required
+                        class="flex-1 px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-white/30"
+                    >
+                    <button 
+                        type="submit"
+                        class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center"
+                    >
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-globe-americas text-3xl text-primary"></i>
+                        <span class="text-2xl font-bold">TravelBloom</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">Your trusted partner in creating extraordinary travel experiences around the world.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="index.html#destinations" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-3"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-3"></i>
+                            info@travelbloom.com
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1"></i>
+                            123 Travel Street<br>Adventure City, AC 12345
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 TravelBloom. All rights reserved. | 
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            const spans = hamburger.querySelectorAll('span');
+            
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                // Open menu
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                
+                // Animate hamburger to X
+                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                // Close menu
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                
+                // Reset hamburger
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                
+                // Reset hamburger
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.remove('bg-white');
+                navbar.classList.add('bg-white/95');
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!firstName || !lastName || !email || !subject || !message) {
+                alert('Por favor, completa todos los campos requeridos.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(`¡Gracias ${firstName}! Tu mensaje ha sido enviado. Te contactaremos pronto.`);
+            e.target.reset();
+        });
+
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            if (email && email.includes('@')) {
+                alert('¡Gracias por suscribirte! Te mantendremos actualizado con nuestras últimas ofertas de viaje.');
+                e.target.reset();
+            } else {
+                alert('Por favor, ingresa un email válido.');
+            }
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-content').forEach(otherContent => {
+                    if (otherContent !== content && !otherContent.classList.contains('hidden')) {
+                        otherContent.classList.add('hidden');
+                        otherContent.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Form field focus animations
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('focus', () => {
+                field.parentElement.classList.add('transform', 'scale-105');
+            });
+            
+            field.addEventListener('blur', () => {
+                field.parentElement.classList.remove('transform', 'scale-105');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        const searchInputs = document.querySelectorAll('input[type="text"]');
+        searchInputs.forEach(input => {
+            if (input.placeholder.includes('Search')) {
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const query = e.target.value.trim();
+                        if (query) {
+                            alert(`Buscando: "${query}"... Esta funcionalidad estará disponible próximamente.`);
+                        }
+                    }
+                });
+            }
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
