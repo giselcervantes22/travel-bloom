@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBloom - Discover Your Next Adventure</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fas fa-globe-americas"></i>
                 TravelBloom
             </a>
             
             <!-- Desktop Navigation -->
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
             
             <!-- Desktop Search -->
@@ -47,9 +46,9 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
         
         <!-- Mobile Search -->
@@ -82,13 +81,13 @@
             <p>Explore breathtaking destinations, immerse yourself in diverse cultures, and create unforgettable memories. Let TravelBloom guide you to extraordinary experiences around the world.</p>
             
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary" id="bookNowBtn">
+                <a href="#destinations" class="btn btn-primary" id="bookNowBtn">
                     <i class="fas fa-calendar-check"></i>
-                    Book Now
+                    Explore Now
                 </a>
-                <a href="#" class="btn btn-secondary">
-                    <i class="fas fa-play"></i>
-                    Watch Video
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
                 </a>
             </div>
             
@@ -109,5 +108,323 @@
             </div>
         </div>
     </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose TravelBloom?</h2>
+                <p>We make your travel dreams come true with our exceptional services and expertise</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Destinations</h3>
+                    <p>Access to over 200 destinations worldwide with carefully curated experiences and local insights.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support to ensure your journey is smooth from start to finish.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe & Secure</h3>
+                    <p>Your safety is our priority. We partner with trusted providers and offer comprehensive travel insurance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Expert Guides</h3>
+                    <p>Local expert guides who know the hidden gems and can provide authentic cultural experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Discover the world's most amazing places with our specially crafted travel packages</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #ff6b6b, #ffa500);">
+                            <i class="fas fa-mountain" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Swiss Alps</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Switzerland</p>
+                                <div class="price">From $1,299</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">
+                            <i class="fas fa-umbrella-beach" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Maldives</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Indian Ocean</p>
+                                <div class="price">From $2,599</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                            <i class="fas fa-torii-gate" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Kyoto</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Japan</p>
+                                <div class="price">From $1,899</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                            <i class="fas fa-monument" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Paris</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> France</p>
+                                <div class="price">From $999</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);">
+                            <i class="fas fa-pyramid" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Cairo</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Egypt</p>
+                                <div class="price">From $1,199</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <div class="image-placeholder" style="background: linear-gradient(45deg, #a8edea, #fed6e3);">
+                            <i class="fas fa-leaf" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <h3>Costa Rica</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Central America</p>
+                                <div class="price">From $899</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Travelers Say</h2>
+                <p>Real experiences from real travelers who've trusted TravelBloom</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"TravelBloom made our honeymoon in Bali absolutely perfect. Every detail was taken care of, and the local guides showed us hidden gems we never would have found on our own."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah & Mike Johnson</strong>
+                        <span>Honeymooners</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As a solo female traveler, I felt completely safe and supported throughout my journey to Morocco. The 24/7 support team was incredible and always there when I needed them."</p>
+                    <div class="testimonial-author">
+                        <strong>Emma Rodriguez</strong>
+                        <span>Solo Traveler</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Our family trip to Japan was seamlessly organized. The kids loved every moment, and we created memories that will last a lifetime. TravelBloom truly understands family travel."</p>
+                    <div class="testimonial-author">
+                        <strong>The Williams Family</strong>
+                        <span>Family Travelers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest travel deals, destination guides, and insider tips delivered to your inbox</p>
+                
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>TravelBloom</span>
+                    </div>
+                    <p>Your trusted partner in creating extraordinary travel experiences around the world.</p>
+                    
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Flight Booking</a></li>
+                        <li><a href="#">Hotel Reservations</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@travelbloom.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City, AC 12345</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelBloom. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing! We\'ll keep you updated with our latest travel deals.');
+            e.target.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
