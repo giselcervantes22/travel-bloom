@@ -825,6 +825,47 @@
                 document.getElementById('clearBtn').classList.remove('hidden');
             }, 300);
         });
+
+         // Search as user types
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        
+        if (query === '') {
+            hideSearchResults();
+            clearBtn.classList.add('hidden');
+            return;
+        }
+
+        clearBtn.classList.remove('hidden');
+        
+        const results = searchDestinations(query);
+        renderNavbarResults(results);
+        showSearchResults();
+    });
+
+    // Clear search
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        hideSearchResults();
+        clearBtn.classList.add('hidden');
+        searchInput.focus();
+    });
+
+    // Hide results when clicking overlay
+    searchOverlay.addEventListener('click', hideSearchResults);
+
+    // Hide results when pressing Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            hideSearchResults();
+        }
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    searchDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
     </script>
 </body>
 </html>
