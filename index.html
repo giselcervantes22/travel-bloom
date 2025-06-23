@@ -604,52 +604,67 @@
             });
         }
 
-        // Render compact results for navbar
-        function renderNavbarResults(results) {
-            const resultsContainer = document.getElementById('resultsContainer');
-            const resultsCount = document.getElementById('resultsCount');
-            const noResults = document.getElementById('noResults');
+       // Reemplaza la función renderNavbarResults con esta versión mejorada:
+function renderNavbarResults(results) {
+    const resultsContainer = document.getElementById('resultsContainer');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
 
-            if (results.length === 0) {
-                noResults.classList.remove('hidden');
-                resultsCount.textContent = '';
-                resultsContainer.innerHTML = '';
-                return;
-            }
+    if (results.length === 0) {
+        noResults.classList.remove('hidden');
+        resultsCount.textContent = '';
+        resultsContainer.innerHTML = '';
+        return;
+    }
 
-            noResults.classList.add('hidden');
-            resultsCount.textContent = `Found ${results.length} destination${results.length > 1 ? 's' : ''}`;
+    noResults.classList.add('hidden');
+    resultsCount.textContent = `Found ${results.length} destination${results.length > 1 ? 's' : ''}`;
 
-            resultsContainer.innerHTML = results.slice(0, 4).map(destination => `
-                <div class="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                    <img 
-                        src="${destination.image}" 
-                        alt="${destination.name}"
-                        class="w-16 h-16 object-cover rounded-lg"
-                        onerror="this.src='https://via.placeholder.com/64x64/667eea/ffffff?text=${encodeURIComponent(destination.name.charAt(0))}'"
-                    >
-                    <div class="flex-1">
-                        <h4 class="font-semibold text-gray-800">${destination.name}</h4>
-                        <p class="text-sm text-gray-600">${destination.location}</p>
-                        <p class="text-sm text-primary font-semibold">${destination.price}</p>
-                    </div>
-                    <div class="flex items-center">
+    resultsContainer.innerHTML = results.slice(0, 4).map(destination => `
+        <div class="flex items-start space-x-4 p-4 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
+            <img 
+                src="${destination.image}" 
+                alt="${destination.name}"
+                class="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                onerror="this.src='https://via.placeholder.com/80x80/667eea/ffffff?text=${encodeURIComponent(destination.name.charAt(0))}'"
+            >
+            <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-semibold text-gray-800 text-lg">${destination.name}</h4>
+                    <div class="flex items-center text-right ml-4">
                         <span class="text-yellow-400 mr-1">★</span>
                         <span class="text-sm text-gray-600">${destination.rating}</span>
                     </div>
                 </div>
-            `).join('');
-
-            if (results.length > 4) {
-                resultsContainer.innerHTML += `
-                    <div class="text-center py-3 border-t">
-                        <button class="text-primary hover:text-secondary font-semibold">
-                            View all ${results.length} results →
-                        </button>
+                <p class="text-sm text-gray-600 mb-2 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-1"></i>
+                    ${destination.location}
+                </p>
+                <p class="text-sm text-gray-700 mb-3 line-clamp-2 leading-relaxed">
+                    ${destination.description.length > 120 ? destination.description.substring(0, 120) + '...' : destination.description}
+                </p>
+                <div class="flex justify-between items-center">
+                    <p class="text-lg font-bold text-primary">${destination.price}</p>
+                    <div class="flex gap-2">
+                        ${destination.category.slice(0, 2).map(cat => `
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs capitalize">${cat}</span>
+                        `).join('')}
                     </div>
-                `;
-            }
-        }
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    if (results.length > 4) {
+        resultsContainer.innerHTML += `
+            <div class="text-center py-4 border-t">
+                <button class="text-primary hover:text-secondary font-semibold text-lg">
+                    View all ${results.length} results →
+                </button>
+            </div>
+        `;
+    }
+}
 
         // Show/hide search dropdown
         function showSearchResults() {
