@@ -512,89 +512,88 @@
     </footer>
 
     <script>
-        // Database of destinations
-        const destinations = [
-            {
-                id: 1,
-                name: "Maldives",
-                location: "Indian Ocean",
-                category: ["beach", "tropical", "luxury"],
-                description: "A tropical paradise with crystal-clear waters, overwater bungalows, and pristine white sand beaches. Perfect for honeymoons and luxury getaways.",
-                image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
-                price: "From $2,599",
-                rating: 4.9
-            },
-            {
-                id: 2,
-                name: "Santorini",
-                location: "Greece",
-                category: ["beach", "city", "romantic", "culture"],
-                description: "Stunning Greek island with iconic blue-domed churches, dramatic cliffs, beautiful beaches, and world-famous sunsets.",
-                image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&h=600&fit=crop",
-                price: "From $1,799",
-                rating: 4.8
-            },
-            {
-                id: 3,
-                name: "Swiss Alps",
-                location: "Switzerland",
-                category: ["mountain", "adventure", "snow", "nature"],
-                description: "Majestic mountain peaks, pristine lakes, charming villages, and world-class skiing. A paradise for nature lovers and adventure seekers.",
-                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-                price: "From $1,299",
-                rating: 4.7
-            },
-            {
-                id: 4,
-                name: "Bali",
-                location: "Indonesia",
-                category: ["beach", "culture", "tropical", "adventure"],
-                description: "Tropical island paradise with beautiful beaches, ancient temples, rice terraces, and rich cultural heritage.",
-                image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800&h=600&fit=crop",
-                price: "From $899",
-                rating: 4.6
-            },
-            {
-                id: 5,
-                name: "Tokyo",
-                location: "Japan",
-                category: ["city", "culture", "modern", "food"],
-                description: "Vibrant metropolis blending ancient traditions with cutting-edge technology. Amazing food, culture, and urban experiences.",
-                image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&h=600&fit=crop",
-                price: "From $1,499",
-                rating: 4.8
-            },
-            {
-                id: 6,
-                name: "Costa Rica",
-                location: "Central America",
-                category: ["beach", "adventure", "nature", "wildlife"],
-                description: "Biodiversity hotspot with stunning beaches, rainforests, volcanoes, and incredible wildlife. Perfect for eco-adventures.",
-                image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop",
-                price: "From $899",
-                rating: 4.5
-            },
-            {
-                id: 7,
-                name: "Paris",
-                location: "France",
-                category: ["city", "culture", "romantic", "art"],
-                description: "The City of Light with iconic landmarks, world-class museums, romantic atmosphere, and exquisite cuisine.",
-                image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&h=600&fit=crop",
-                price: "From $999",
-                rating: 4.7
-            },
-            {
-                id: 8,
-                name: "Machu Picchu",
-                location: "Peru",
-                category: ["mountain", "culture", "adventure", "history"],
-                description: "Ancient Incan citadel set high in the Andes Mountains. A UNESCO World Heritage site and one of the New Seven Wonders.",
-                image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&h=600&fit=crop",
-                price: "From $1,199",
-                rating: 4.9
-            }
-        ];
+       const destinations = [
+    {
+        id: 1,
+        name: "Maldives",
+        location: "Country: Maldives",
+        category: ["beach", "tropical", "luxury"],
+        description: "A tropical paradise with crystal-clear waters, overwater bungalows, and pristine white sand beaches. Perfect for honeymoons and luxury getaways.",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+        price: "From $2,599",
+        rating: 4.9
+    },
+    {
+        id: 2,
+        name: "Santorini",
+        location: "Country: Greece",
+        category: ["beach", "city", "romantic", "culture"],
+        description: "Stunning Greek island with iconic blue-domed churches, dramatic cliffs, beautiful beaches, and world-famous sunsets.",
+        image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&h=600&fit=crop",
+        price: "From $1,799",
+        rating: 4.8
+    },
+    {
+        id: 3,
+        name: "Swiss Alps",
+        location: "Country: Switzerland",
+        category: ["mountain", "adventure", "snow", "nature"],
+        description: "Majestic mountain peaks, pristine lakes, charming villages, and world-class skiing. A paradise for nature lovers and adventure seekers.",
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+        price: "From $1,299",
+        rating: 4.7
+    },
+    {
+        id: 4,
+        name: "Bali",
+        location: "Country: Indonesia",
+        category: ["beach", "culture", "tropical", "adventure"],
+        description: "Tropical island paradise with beautiful beaches, ancient temples, rice terraces, and rich cultural heritage.",
+        image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800&h=600&fit=crop",
+        price: "From $899",
+        rating: 4.6
+    },
+    {
+        id: 5,
+        name: "Tokyo",
+        location: "Country: Japan",
+        category: ["city", "culture", "modern", "food"],
+        description: "Vibrant metropolis blending ancient traditions with cutting-edge technology. Amazing food, culture, and urban experiences.",
+        image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&h=600&fit=crop",
+        price: "From $1,499",
+        rating: 4.8
+    },
+    {
+        id: 6,
+        name: "Costa Rica",
+        location: "Country: Central America",
+        category: ["beach", "adventure", "nature", "wildlife"],
+        description: "Biodiversity hotspot with stunning beaches, rainforests, volcanoes, and incredible wildlife. Perfect for eco-adventures.",
+        image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop",
+        price: "From $899",
+        rating: 4.5
+    },
+    {
+        id: 7,
+        name: "Paris",
+        location: "Country: France",
+        category: ["city", "culture", "romantic", "art"],
+        description: "The City of Light with iconic landmarks, world-class museums, romantic atmosphere, and exquisite cuisine.",
+        image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&h=600&fit=crop",
+        price: "From $999",
+        rating: 4.7
+    },
+    {
+        id: 8,
+        name: "Machu Picchu",
+        location: "Country: Peru",
+        category: ["mountain", "culture", "adventure", "history"],
+        description: "Ancient Incan citadel set high in the Andes Mountains. A UNESCO World Heritage site and one of the New Seven Wonders.",
+        image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&h=600&fit=crop",
+        price: "From $1,199",
+        rating: 4.9
+    }
+];
 
         // Search functionality
         function searchDestinations(query) {
